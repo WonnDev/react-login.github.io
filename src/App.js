@@ -4,25 +4,26 @@ import './App.css';
 import Dashboard from './components//Dashboard/Dashboard';
 import Login from './components/Login/Login';
 import Preferences from './components/Preferences/Preferences';
-
+import Nav from './components/Nav/Nav';
+import Home from './components/Home/Home';
 
 function App() {
-  
+
 
 
   return (
     <BrowserRouter>
-
-      <div className="wrapper">
+      <header className='wrapper'>
+        <Nav />
         <Routes>
-          <Route path="/"
-            element={<Login /> } />
-          <Route path="/dashboard"
-            element={<Dashboard />} />
-          <Route path="/preferences"
+          <Route path="/" exact
+            element={<Home />} />
+          <Route path="/login"
+            element={<Login />} />
+          <Route path="/signin"
             element={<Preferences />} />
         </Routes>
-      </div>
+      </header>
     </BrowserRouter>
   );
 }

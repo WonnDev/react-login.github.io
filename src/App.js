@@ -6,6 +6,8 @@ import Login from './components/Login/Login';
 import Preferences from './components/Preferences/Preferences';
 import Nav from './components/Nav/Nav';
 import Home from './components/Home/Home';
+import ListRedux from './components/ListRedux/ListRedux';
+import LoginWRD from './components/LoginWRD/LoginWRD';
 
 function App() {
 
@@ -18,10 +20,12 @@ function App() {
         <Routes>
           <Route path="/" exact
             element={<Home />} />
-          <Route path="/login"
-            element={<Login />} />
+          {/* <Route path="/login"
+            element={<Login />} /> */}
           <Route path="/signin"
-            element={<Preferences />} />
+            element={<LoginWRD />} />
+          <Route path="/listredux"
+            element={<ListRedux />} />
         </Routes>
       </header>
     </BrowserRouter>

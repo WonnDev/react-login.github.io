@@ -10,9 +10,6 @@ const Login = () => {
     const [a, setA] = useState({
         'name': '',
         'pass': ''
-        // [
-        //     { id: '', name: '', pass: '' }  
-        // ]
     });
 
     const [c, setC] = useState({
@@ -54,9 +51,6 @@ const Login = () => {
 
 
     const onHandleInputChange = (event) => {
-        // let { [name], value } = event.target;
-        // setA({ ...a, [name]: value });
-
         setA({ ...a, [event.target.name]: event.target.value });
         console.log('handInput check: ', a);
     }
@@ -69,14 +63,11 @@ const Login = () => {
             if (real_account[x].name === a.name && real_account[x].pass === a.pass) {
 
 
-                // console.log('Login success');
+
                 flash = true;
                 break;
             }
-            // else {
-            //     console.log('Login fail');
-            // }
-            // console.log(x);  
+
         }
         if (flash === true) {
             alert('Login success');
@@ -103,7 +94,7 @@ const Login = () => {
                     <img src='favicon.ico' alt='logo' />
                 </div>
                 <h1>Log In</h1>
-                <form href="" method="">
+                <form >
                     <label>
                         <p>Username:</p>
                         <input type="text"
@@ -134,18 +125,20 @@ const Login = () => {
 
 
 
-                <Preferences
-                    name={real_account}
-                    deleteOneAccount={deleteOneAccount}
-                    editAccount={editAccount}
-                />
-                <Dashboard
-                    nameC={c}
-                    addNewAccount={addNewAccount}
-                    setName={setB}
-                    name={real_account}
-                />
+
+
             </div>
+            <Dashboard
+                nameC={c}
+                addNewAccount={addNewAccount}
+                setName={setB}
+                name={real_account}
+            />
+            <Preferences
+                name={real_account}
+                deleteOneAccount={deleteOneAccount}
+                editAccount={editAccount}
+            />
 
         </>
     )
@@ -153,7 +146,7 @@ const Login = () => {
 }
 const mapStateToProps = (state) => { //state of redux
     return {
-        dataRedux: state.initCurrentUser,
+        dataRedux: state.users
     }
 }
 

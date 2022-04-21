@@ -12,7 +12,6 @@ const rootReducer = (state = initState, action) => {   //state (obj not state of
     switch (action.type) {
         case "DELETE_USER":
             console.log('>>run into deluser: ', action)
-
             let users = state.users;
             users = users.filter(item => item.id !== action.payload.id)
             return {
@@ -20,10 +19,15 @@ const rootReducer = (state = initState, action) => {   //state (obj not state of
             }
         case 'CREATE_USER':
             let id = Math.floor(Math.random() * 10000)
-
-            let user = { id: id, name: `random - ${id}`, password: `random - ${id}` }
+            let user = { id: id, name: `random user: ${id}`, password: `${id}` }
             return {
                 ...state, users: [...state.users, user]
+            }
+        case 'LOGIN_USER':
+            let userInput = action.payload.user
+            let passwordInput = action.payload.password
+            return {
+
             }
         // case "SET_USER":
         //     return {

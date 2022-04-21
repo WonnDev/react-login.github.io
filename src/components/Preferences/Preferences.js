@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+
 const Preferences = (props) => {
   const handleOnClickDelete = (account) => {
     console.log('ClickDelete: ', account);
@@ -13,24 +14,25 @@ const Preferences = (props) => {
 
 
 
-  const handleDeleteUser = (user) => {
-    console.log('>>checkUserDel: ', user);
-    props.deleteUserRedux(user);
-  }
+  // const handleDeleteUser = (user) => {
+  //   console.log('>>checkUserDel: ', user);
+  //   props.deleteUserRedux(user);
+  // }
 
-  const handleCreateUser = () => {
-    props.addUserRedux();
-  }
+  // const handleCreateUser = () => {
+  //   props.addUserRedux();
+  // }
 
-  console.log('>>checkpropsdataredux: ', props.dataRedux)
-  let listUsers = props.dataRedux;
+  // console.log('>>checkpropsdataredux: ', props.dataRedux)
+  // let listUsers = props.dataRedux;
 
   return (
     <>
       <div>
         <h1>Account List  </h1>
       </div>
-      <div>
+
+      {/* <div>
         {listUsers && listUsers.length > 0 &&
           listUsers.map((item, index) => {
             return (
@@ -43,7 +45,7 @@ const Preferences = (props) => {
           })
         }
         <button onClick={() => handleCreateUser()}>Add new</button>
-      </div>
+      </div> */}
 
 
       <div>
@@ -59,23 +61,25 @@ const Preferences = (props) => {
           )
         })
         }
+
       </div>
 
     </>
   );
 }
 
-const mapStateToProps = (state) => { //state of redux
-  return {
-    dataRedux: state.users
-  }
-}
+// const mapStateToProps = (state) => { //state of redux
+//   return {
+//     dataRedux: state.users
+//   }
+// }
 
-const mapDisPatchToProps = (dispatch) => {
-  return {
-    deleteUserRedux: (userDelete) => dispatch({ type: 'DELETE_USER', payload: userDelete }),
-    addUserRedux: () => dispatch({ type: 'CREATE_USER' })
-  }
-}
+// const mapDisPatchToProps = (dispatch) => {
+//   return {
+//     deleteUserRedux: (userDelete) => dispatch({ type: 'DELETE_USER', payload: userDelete }),
+//     addUserRedux: () => dispatch({ type: 'CREATE_USER' })
+//   }
+// }
 
-export default connect(mapStateToProps, mapDisPatchToProps)(Preferences);
+// export default connect(mapStateToProps, mapDisPatchToProps)(Preferences);
+export default Preferences;

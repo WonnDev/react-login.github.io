@@ -12,7 +12,10 @@ function Nav() {
                 Login
             </NavLink>
             <NavLink to='/signin' activeclassname='active'>
-                Sign In
+                SignIn WRD
+            </NavLink>
+            <NavLink to='/listredux' activeclassname='active'>
+                DataRD
             </NavLink>
             {/* <Link to='/'>Home</Link> //Link not sp className
             <Link to='/login'>Login</Link>
